@@ -91,8 +91,8 @@ def mars_facts():
     except BaseException:
         return None
 
-    df.columns=['description', 'Mars', 'Earth']
-    df.set_index('description', inplace=True)
+    df.columns=['Description', 'Mars', 'Earth']
+    df.set_index('Description', inplace=True)
     
     return df.to_html()
 

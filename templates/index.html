@@ -12,12 +12,12 @@
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     >
 </head>
-<body>
+<body style="background-color: black">
     <!-- Bootstrap container that holds all of the design elements -->
-    <div class="container">
-        <div class="jumbotron text-center">
+    <div class="container" style="color:rgba(255, 255, 255, 0.795)">
+        <div class="jumbotron text-center " style="background-color: grey; color:black">
             <h1>Mission to Mars</h1>
-            <p><a class="btn btn-primary btn-lg" href="/scrape"
+            <p><a class="btn btn-success btn-lg" href="/scrape"
                 role="button">Scrape New Data</a></p>
         </div>
 
@@ -26,9 +26,9 @@
             <div class="col-md-12">
                 <div class="media">
                     <div class="media-body">
-                        <h2>Latest Mars News</h2>
+                        <h2 class="media-heading">Latest Mars News</h2>
                         <h4 class="media-heading">{{mars.news_title}}</h4>
-                        <p>{{ mars.news_paragraph }}</p>
+                        <p >{{ mars.news_paragraph }}</p>
                     </div>
                 </div>
             </div>
@@ -40,14 +40,12 @@
             <!-- Second level -->
             <div class="col-md-8">
                 <h2>Featured Mars Image</h2>
-                <img src="{{ mars.featured_image }}" class="img-responsive" alt="Responsive image">
+                <img src="{{ mars.featured_image }}" class="img-responsive img-thumbnail" alt="Responsive image">
             </div>
             <!-- Mars Facts -->
-            <div class="col-md-4">
-                <div class="row" id="mars-facts">
-                    <h4>Mars Facts</h4>
+            <div class="col-md-4" style="background-color:lightgray; color:black">           
+                    <h4>Mars Facts</h4>           
                     {{ mars.facts | safe }}
-                </div>
             </div>
         </div>
 
@@ -58,7 +56,7 @@
             {% for hemisphere in mars.hemispheres %}
             <div class="col-md-6">
                     <h3>{{hemisphere.title}}</h3>
-                    <img src = "{{hemisphere.img_url}}" class="img-responsive" alt="Responsive image">
+                    <img src = "{{hemisphere.img_url}}" class="img-responsive img-thumbnail" alt="Responsive image">
                 
             </div>
             {% endfor %}
